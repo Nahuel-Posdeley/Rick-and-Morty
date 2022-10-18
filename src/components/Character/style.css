@@ -10,7 +10,7 @@
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
 }
-.black{
+.dark{
     min-height: 100vh;
     background-color: #1d1e3e;
     color: white;
@@ -24,4 +24,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.container__title h1{
+    font-size: 8vmin;
+}
+@media (min-width: 500px) {
+    .container__title h1{
+        font-size: 5vmin;
+    }
 }

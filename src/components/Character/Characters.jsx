@@ -15,19 +15,19 @@ const Characters = () => {
       <div className="container__title">
       <h1>Rick and Morty</h1>
       <div className="container__toggle">
-      <h1>{theme}</h1>
-      <label htmlFor="toggle">First name:</label>      <ReactSwitch
-      onChange={handleSwitch}
-      onColor='#86d3ff'
-      checked={checked}
-      id='toggle'
-      name='toggle'
-      onHandleColor='#269336'
-      handleDiameter={30}
-      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-      uncheckedIcon={false}
-      checkedIcon={false}
+      <label htmlFor="toggle">{theme}</label>
+        <ReactSwitch
+        onChange={handleSwitch}
+        onColor='#86d3ff'
+        checked={checked}
+        id='toggle'
+        name='toggle'
+        onHandleColor='#269336'
+        handleDiameter={30}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        uncheckedIcon={false}
+        checkedIcon={false}
       />
       </div>      
       </div>

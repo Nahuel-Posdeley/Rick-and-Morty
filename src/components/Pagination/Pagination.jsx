@@ -12,7 +12,7 @@ const Pagination = () => {
         <b>Page:</b> {actualPage} - {totalPages}
      </div> 
      <div>
-        <b>Go to page:</b>
+        <b>Go to page: </b>
         <select
          name='goTo'
          className='container__select'
@@ -35,8 +35,8 @@ const Pagination = () => {
         </select>
      </div> 
      <div>
-      {prevPage && <button data-type='prev' onClick={(e) => goToPages(prevPage,e)} className='btn'>Prev</button>}
-      {nextPage && <button data-type='next' onClick={(e) => goToPages(nextPage,e)} className='btn'>Next</button>}
+      {prevPage && <button data-type='prev' onClick={(e) => goToPages(prevPage,e)} className='btn'>{'<'}</button>}
+      {nextPage && <button data-type='next' onClick={(e) => goToPages(nextPage,e)} className='btn'>{'>'}</button>}
      </div>
     </div>
   )

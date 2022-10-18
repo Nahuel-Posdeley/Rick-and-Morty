@@ -55,7 +55,7 @@ export const CharactersContextProvider = ({children}) => {
     }
     const handleSwitch = (nextChecked) => {
         setChecked(nextChecked)
-        setTheme(state => state === 'light' ? 'black' : 'light')
+        setTheme(state => state === 'light' ? 'dark' : 'light')
       }
     return(
         <CharactersContext.Provider 

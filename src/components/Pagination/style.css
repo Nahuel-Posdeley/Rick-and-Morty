@@ -30,8 +30,16 @@
 
   .container__select{
     width: 50px;
-    padding: 7px;
+    padding: 5px;
     font-size: 15px;
     border-radius: 5px;
     text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .container__paginator{
+      font-size: 10px;
+      display: flex;
+      width: 90%;
+    }
   }
