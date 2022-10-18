@@ -1,0 +1,37 @@
+.container__paginator{
+    display: flex;
+    width: 60%;
+    margin: 20px auto;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 1rem;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3rem;
+    border: none;
+    margin: 0 5px;
+    transition: 0.5s;
+    background-color: #60605e;
+  }
+    
+  .btn:hover {
+    background-color: #888884;
+    transition: 0.5s;
+  }
+
+  .container__select{
+    width: 50px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
