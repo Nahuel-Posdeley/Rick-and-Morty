@@ -27,6 +27,9 @@ export const CharactersContextProvider = ({children}) => {
             setPrevPage(info.prev)
             setNextPage(info.next)
         })
+
+        // localStorage theme
+        setTheme(localTheme())
     },[])
 
 
@@ -62,8 +65,13 @@ export const CharactersContextProvider = ({children}) => {
     const handleSwitch = (nextChecked) => {
         setChecked(nextChecked)
         setTheme(state => state === 'light' ? 'dark' : 'light')
+        localStorage.setItem('mode',theme)
       }
+    const localTheme = () => {
+        return localStorage.getItem('mode')
 
+    }
+console.log(localStorage.getItem('mode'))
 
       // filter seacher
 
