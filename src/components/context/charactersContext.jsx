@@ -61,12 +61,17 @@ export const CharactersContextProvider = ({children}) => {
     }
 
     // mode drack
-
     const handleSwitch = (nextChecked) => {
         setChecked(nextChecked)
         setTheme(state => state === 'light' ? 'dark' : 'light')
-        localStorage.setItem('mode',theme)
-      }
+    }
+    useEffect(()=>{
+        saveThemeLocal(theme)
+
+    },[theme])
+    const saveThemeLocal = (color) =>{
+        localStorage.setItem('mode',color)
+    }
     const localTheme = () => {
         return localStorage.getItem('mode')
 
