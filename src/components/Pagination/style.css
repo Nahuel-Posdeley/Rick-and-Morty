@@ -6,6 +6,35 @@
     align-items: center;
     justify-content: space-between;
 }
+.container__search{
+  text-align: center;
+}
+.input__search{
+    margin: 0 auto;
+    width: 50%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none;
+}
+.input__search:focus{
+  border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+}
+.input__search:-webkit-input-placeholder{
+  transition: opacity 0.45s ease; 
+  opacity: 0;
+}
+.input__search::-moz-placeholder {
+  transition: opacity 0.45s ease; 
+  opacity: 0;
+ }
+ .input__search:-ms-placeholder {
+  transition: opacity 0.45s ease; 
+  opacity: 0;
+  }  
 
 .btn {
     display: inline-flex;

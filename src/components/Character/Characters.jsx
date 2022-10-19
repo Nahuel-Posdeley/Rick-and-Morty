@@ -7,7 +7,7 @@ import Card from '../Card/Card';
 import ReactSwitch from 'react-switch';
 import Loading from '../Loading/Loading';
 const Characters = () => {
-    const {characters,handleSwitch,checked,theme} = useContext(CharactersContext)
+    const {handleSwitch,checked,theme,characters} = useContext(CharactersContext)
     
     
     return (
@@ -35,7 +35,7 @@ const Characters = () => {
       <Pagination />
       <div className='container__characters'>
       {
-         characters  ? characters.map(item => {
+         characters.length > 0  ? characters.map(item => {
           return(
               <Card
                 key={item.id}
@@ -45,7 +45,7 @@ const Characters = () => {
                 species={item.species}
               />
             )
-          }) : <Loading />
+          }): characters.length === 0 ? 'No encontrado' : <Loading />
         }
       </div>
     </div>

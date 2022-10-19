@@ -3,7 +3,8 @@ import { createContext, useEffect, useState } from "react";
 export const CharactersContext = createContext();
 
 export const CharactersContextProvider = ({children}) => {
-    const [characters, setCharacters] = useState(null);
+    const [characters, setCharacters] = useState([]);
+    const [data, setData] = useState([]);
     const [totalCharacters, setTotalCharacters] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [actualPage, setActualPage] = useState(1);
@@ -11,7 +12,7 @@ export const CharactersContextProvider = ({children}) => {
     const [nextPage, setNextPage] = useState(null);
     const [checked,setChecked] = useState(false);
     const [theme,setTheme] = useState('light');
-
+    const [search,setSearch] = useState('');
 
 
     
@@ -20,6 +21,7 @@ export const CharactersContextProvider = ({children}) => {
         .then(response => {
             const { info , results} = response.data;
             setCharacters(results);
+            setData(results)
             setTotalCharacters(info.count)
             setTotalPages(info.pages)
             setPrevPage(info.prev)
@@ -27,9 +29,10 @@ export const CharactersContextProvider = ({children}) => {
         })
     },[])
 
+
+    // filter pages
     const goToPages = (page,e) => {
         const type = e.target.dataset.type
-        console.log(type)
         switch(type){
             case 'prev': 
             setActualPage(actualPage - 1);
@@ -53,10 +56,34 @@ export const CharactersContextProvider = ({children}) => {
             setNextPage(info.next)
         })
     }
+
+    // mode drack
+
     const handleSwitch = (nextChecked) => {
         setChecked(nextChecked)
         setTheme(state => state === 'light' ? 'dark' : 'light')
       }
+
+
+      // filter seacher
+
+      const handleSearch = (e)=>{
+        setSearch(e.target.value)
+        filterSearch(e.target.value)
+  }
+
+  const filterSearch = (name) => {
+
+    if(name.length > 0){
+        const dataFilterSearch = data.filter(item => item.name.toLowerCase().includes(name.toLocaleLowerCase()))
+    setCharacters(dataFilterSearch)
+    }else{
+        setCharacters(characters)
+    }
+    
+  }
+ 
+
     return(
         <CharactersContext.Provider 
             value={{
@@ -71,6 +98,8 @@ export const CharactersContextProvider = ({children}) => {
                 handleSwitch,
                 theme,
                 setTheme,
+                handleSearch,
+                search,
              }}
             >
             {children}
