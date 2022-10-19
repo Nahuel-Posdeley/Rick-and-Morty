@@ -76,8 +76,6 @@ export const CharactersContextProvider = ({children}) => {
         return localStorage.getItem('mode')
 
     }
-console.log(localStorage.getItem('mode'))
-
       // filter seacher
 
       const handleSearch = (e)=>{
