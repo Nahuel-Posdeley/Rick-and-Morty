@@ -1,0 +1,39 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+section a {
+    text-align: center;
+    color: green;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.container_details {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 100px auto 0 auto;
+
+}
+
+.container_details img {
+    border-radius: 10px;
+}
+
+@media (max-width: 574px) {
+    section {
+        margin: auto;
+    }
+
+    .container_details {
+        flex-direction: column;
+    }
+}
+
+/* .container_details */

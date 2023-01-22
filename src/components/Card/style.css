@@ -1,4 +1,4 @@
-.container__card{
+.container__card {
     min-width: 50px !important;
     width: 200px;
     max-width: 600px !important;
@@ -7,23 +7,27 @@
     border-radius: 5px;
     transition: 0.5s;
     margin: 15px;
+    text-decoration: none;
+    color: #d3d1d1
 }
-.container__card img{
+
+.container__card img {
     width: 100%;
 }
 
-.container__caracteristicas{
+.container__caracteristicas {
     display: flex;
     flex-direction: column;
 }
-.card__title{
+
+.card__title {
     text-align: center;
 }
 
-.container__card:hover{
-    opacity: 0.9;
+.container__card:hover {
+    opacity: 0.8;
     transition: 0.5s;
     background-color: #d3d1d1;
-    transform:scale(1.1);
-
+    transform: scale(1.1);
+    color: black;
 }

@@ -88,6 +88,7 @@ export const CharactersContextProvider = ({children}) => {
     if(name.length > 0){
         const dataFilterSearch = data.filter(item => item.name.toLowerCase().includes(name.toLocaleLowerCase()))
     setCharacters(dataFilterSearch)
+
     }else{
         setCharacters(characters)
     }

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { CharactersContext } from '../context/charactersContext';
+import InputSearch from '../InputSearch';
 import './style.css';
 const Pagination = () => {
-    const { totalCharacters, totalPages, actualPage,handleSearch ,prevPage,nextPage,search,goToPages} = useContext(CharactersContext)
+    const { totalCharacters, totalPages, actualPage,prevPage,nextPage,goToPages} = useContext(CharactersContext)
   return (
     <div className='container__search'>
-        <input className='input__search' value={search} onChange={(e) => handleSearch(e)} placeholder='Search Character' />
+      <InputSearch />
       <div className='container__paginator'>
      <div>
         <b>Total:</b> {totalCharacters}
